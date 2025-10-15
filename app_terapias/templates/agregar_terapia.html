@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Terapia</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { max-width: 400px; }
+        label { display: block; margin: 10px 0 5px; }
+        input, textarea { width: 100%; padding: 8px; margin-bottom: 10px; }
+        button { background-color: #007BFF; color: white; padding: 10px 15px; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>Agregar Terapia</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Nombre:</label>
+        <input type="text" name="nombre" required>
+
+        <label>Descripción:</label>
+        <textarea name="descripcion" required></textarea>
+
+        <label>Duración (minutos):</label>
+        <input type="number" name="duracion" required>
+
+        <label>Cita:</label>
+        <input type="datetime-local" name="cita" required>
+
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="/">Volver al listado</a>
+</body>
+</html>
